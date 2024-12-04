@@ -10,8 +10,16 @@ spring:
         config:
           default:
             loggerLevel: FULL
-
+            connect-timeout: 2000
+            read-timeout: 3000
+          inventory-service:
+            connect-timeout: 1000
+            read-timeout: 2000
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    com.example.orderservice.client: DEBUG
